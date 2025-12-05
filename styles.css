@@ -12,33 +12,42 @@ body {
   height: 100vh;
 }
 
-.toska {
-  position: absolute;
-  font-size: 2rem;
-  font-weight: bold;
-  color: hotpink;
-  opacity: 0.8;
-  animation: spread 5s forwards;
-}
-
-@keyframes spread {
-  from { transform: scale(0.5); opacity: 0; }
-  to { transform: scale(1.5); opacity: 1; }
-}
-
-/* Popup styling */
+/* Pop-up window style */
 .popup {
   position: fixed;
+  width: 250px;
+  height: 150px;
   background: #111;
+  border: 3px solid hotpink;
+  box-shadow: 4px 4px 10px rgba(255, 105, 180, 0.5);
   color: #fff;
-  border: 2px solid hotpink;
   padding: 1rem;
   font-size: 1rem;
-  z-index: 9999;
-  animation: flicker 1s infinite alternate;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes flicker {
-  from { opacity: 0.7; }
+/* Final message */
+#final-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: hotpink;
+  text-align: center;
+  display: none;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
