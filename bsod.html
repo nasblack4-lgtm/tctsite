@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BSOD</title>
+  <style>
+    body {
+      background: #0000AA;
+      color: #FFFFFF;
+      font-family: 'Lucida Console', Monaco, monospace;
+      font-size: 1rem;
+      padding: 2rem;
+      line-height: 1.5;
+    }
+    .crash-codes {
+      margin-top: 2rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <p>A problem has been detected and TOSKA has been activated to prevent damage to your soul.</p>
+  <p>If this is the first time you've seen this STOP error screen, don't panic. TOSKA is coming...</p>
+  <p>Don't die yet.</p>
+  <p>Technical information:</p>
+  <p>*** STOP: 0x0000TCT (0x00000000, 0x00000000, 0x00000000, 0x00000000)</p>
+  <div class="crash-codes" id="crash-codes"></div>
+
+  <script>
+    // Generate fake crash codes
+    const container = document.getElementById("crash-codes");
+    for (let i = 0; i < 200; i++) {
+      const hex = "0x" + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, "0").toUpperCase();
+      container.innerHTML += hex + " ";
+    }
+
+    // Reboot to glitch site
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 8000);
+  </script>
+</body>
+</html>
